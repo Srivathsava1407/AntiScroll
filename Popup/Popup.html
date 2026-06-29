@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Blocker</title>
+</head>
+<body>
+    <h1>Scroll Blocker</h1>
+
+    <label class="row">
+        <span>Enabled</span>
+        <input type="checkbox" id="enabled">
+    </label>
+
+    <label class="row">
+        <span>Block YouTube Shorts</span>
+        <input type="checkbox" id="blockYouTube">
+    </label>
+
+    <label class="row">
+        <span>Block Instagram Reels</span>
+        <input type="checkbox" id="blockInstagram">
+    </label>
+
+    <div class="stats">
+        <section>
+            <span class="stat-value" id="blockedToday">0</span>
+            <span class="stat-label">blocked today</span>
+        </section>
+        <section>
+            <span class="stat-value" id="blockedTotal">0</span>
+            <span class="stat-label">blocked total</span>
+        </section>
+    </div>
+</body>
+</html>
