@@ -54,6 +54,7 @@
     }
 
     function redirectAway() {
-        
+        recordBlock();
+        location.href = SITE === "youtube" ? "https://www.youtube.com/" : "https://www.instagram.com/";
     }
 })
