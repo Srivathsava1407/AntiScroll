@@ -57,4 +57,36 @@
         recordBlock();
         location.href = SITE === "youtube" ? "https://www.youtube.com/" : "https://www.instagram.com/";
     }
-})
+
+    // **** yet to create functions for detecting shorts/reels in feed/homescreen shelfs, and redirecting away from them. ****
+
+    // ---- main loop ----
+
+    function tick() {
+        if (!siteIsBlocked()) return;
+
+        if (location.pathname !== lastPath) {
+            lastPath = location.pathname;
+        }
+
+        if (onShortsOrReelsPage()) {
+            redirectAway();
+            return;
+        }
+    }
+
+    const observer = new MutationObserver(() => tick());
+
+    function init() {
+        loadSettings();
+        observer.observe(document.body, { childList: true, subtree: true });
+        setInterval(tick, 800);
+        tick();
+    }
+
+    if (document.body) {
+        init();
+    } else {
+        document.addEventListener("DOMContentLoaded", init);
+    }
+})();
