@@ -46,4 +46,14 @@
     }
 
     // ---- detection: full Shorts/Rells pages ----
+
+    function onShortsOrReelsPage() {
+        if (SITE === "youtube") return location.pathname.startsWith("/shorts/");
+        if (SITE === "instagram") return location.pathname.startsWith("/reels/");
+        return false;
+    }
+
+    function redirectAway() {
+        
+    }
 })
