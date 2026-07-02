@@ -31,6 +31,10 @@
 
     // ---- stats ----
 
+    function todayKey() {
+        return new Date().toISOString().slice(0,10);
+    }
+
     function recordBlock() {
         const today = todayKey();
         chrome.storage.local.get("stats", (data) => {
