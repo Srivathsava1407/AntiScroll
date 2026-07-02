@@ -26,7 +26,7 @@
         }
     ],
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "Popup/Popup.html",
         "default_title": "Scroll Blocker"
     }
 }
