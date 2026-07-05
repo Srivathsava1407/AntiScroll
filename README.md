@@ -1,4 +1,4 @@
-# Scroll Blocker - browser extension
+# Scroll Blocker - browser extension - v:1.1.0
 
 A Chrome extension that detects and blocks YouTube Shorts and Instagram Reels, so you can use both sites without falling into a scroll loop.
 
@@ -22,7 +22,7 @@ The extension icon appears in your toolbar. Click it to toggle blocking per site
  
 ## Roadmap of future version updates
 
-- [ ] Hiding shorts/reels shelf from the homepage
+- [X] Hiding shorts/reels shelf from the homepage
 - [ ] Friction screen (a short delay/prompt) instead of an instant redirect
 - [ ] Per-time-of-day schedules (e.g. only block 9am–5pm)
 - [ ] Android companion app using `AccessibilityService` for native app coverage

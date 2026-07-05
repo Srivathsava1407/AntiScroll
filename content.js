@@ -62,7 +62,28 @@
         location.href = SITE === "youtube" ? "https://www.youtube.com/" : "https://www.instagram.com/";
     }
 
-    // **** yet to create functions for detecting shorts/reels in feed/homescreen shelfs, and redirecting away from them. ****
+    // functions for detecting shorts/reels in feed/homescreen shelfs, and redirecting away from them.
+
+    const YOUTUBE_SHELF_SELECTORS = [
+        'ytd-reel-shelf-renderer',
+        'ytd-rich-shelf-renderer[is-shorts',
+        'ytd-guide-entry-renderer a[title="Shorts"]'
+    ];
+
+    const INSTAGRAM_SHELF_SELECTORS = [
+        'a[href^="/reels/"]',
+        'svg[aria-label="Reels"]'
+    ];
+
+    function hideShelves() {
+        const selectors = SITE === "youtube" ? YOUTUBE_SHELF_SELECTORS : INSTAGRAM_SHELF_SELECTORS;
+        for (const selector of selectors) {
+            document.querySelectorAll(selector).forEach((el) => {
+                const target = el.closest("ytd-rich-item renderer, ytd-rich-grid-renderer, ytd-guide-entry-renderer, a") || el;
+                target.style.display = "none";
+            });
+        }
+    }
 
     // ---- main loop ----
 
@@ -77,6 +98,8 @@
             redirectAway();
             return;
         }
+
+        hideShelves();
     }
 
     const observer = new MutationObserver(() => tick());
