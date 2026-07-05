@@ -98,6 +98,8 @@
             redirectAway();
             return;
         }
+
+        hideShelves();
     }
 
     const observer = new MutationObserver(() => tick());
