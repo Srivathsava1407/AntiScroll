@@ -79,7 +79,7 @@
         const selectors = SITE === "youtube" ? YOUTUBE_SHELF_SELECTORS : INSTAGRAM_SHELF_SELECTORS;
         for (const selector of selectors) {
             document.querySelectorAll(selector).forEach((el) => {
-                const target = el.closest("ytd-rich-item renderer, ytd-rich-grid-renderer, ytd-guide-entry-renderer, a") || el;
+                const target = el.closest("ytd-rich-item renderer, ytd-guide-entry-renderer, a") || el;
                 target.style.display = "none";
             });
         }
